@@ -3,7 +3,7 @@ import sys
 
 
 def username():
-    user_file_folder = "home/" if sys.platform == 'linux' else "users/"
+    user_file_folder = "home/" if sys.platform == 'linux' or sys.platform == 'linux2' else "users/"
 
     dir_path = os.path.dirname(os.path.realpath(__file__)).lower()
     start = dir_path.find(user_file_folder)
