@@ -1,11 +1,15 @@
 import os
+import sys
+
 
 def username():
+    user_file_folder = "home/" if sys.platform == 'linux' else "users/"
+
     dir_path = os.path.dirname(os.path.realpath(__file__)).lower()
-    start = dir_path.find("users/")
+    start = dir_path.find(user_file_folder)
     if start == -1:
         return None
-    start += len("users/")
+    start += len(user_file_folder)
     end = dir_path.find("/", start)
     if end == -1:
         return None
